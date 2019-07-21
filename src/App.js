@@ -40,11 +40,12 @@ class App extends Component {
           photo: location.image_url,
           address: location.location.address1,
           infowindowIsOpen: false,
-          animation: window.google.maps.Animation.DROP,
+          animation: window.google && window.google.maps.Animation.DROP
         }
       })
       this.setState({locations:locations, filteredLocations:locations})
     })
+    .catch(error => alert(error))
   }
 
   /* hide all infowindow */

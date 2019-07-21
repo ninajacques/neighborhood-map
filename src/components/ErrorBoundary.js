@@ -16,8 +16,9 @@ class ErrorBoundary extends Component {
   	render() {
     	if (this.state.error) {
       		return (
-      			<div>
-      				<h1>Sorry, something happened wrong. The Error is: {this.state.errorInfo}</h1>
+      			<div className='error-boundary'>
+      				<p><strong>Sorry, something happened wrong. The Error is:</strong></p>
+              <p>{this.state.errorInfo.componentStack}</p>
       			</div>
       		)
     	}
