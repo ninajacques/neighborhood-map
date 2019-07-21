@@ -1,33 +1,98 @@
-.App {
-  text-align: center;
+html, body, #root, .app {
+  width: 100vw;
+  height: 100vh;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.map {
+  height: 100%;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.photo {
+	width: 100%;
+	max-width: 200px !important;
+	height: auto;
+}
+.photo[src=""]  {
+	display: none;
+}
+.search-results {
+	height: calc(100vh - 90px);
+    overflow-y: auto;
+}
+.search-results ul {
+	margin: 0; 
+	padding: 0;
+}
+.search-results ul li {
+	margin: 0; 
+	padding: 12px 0;
+	border-bottom: 1px solid #777;
+	color: white;
+	text-align: left;
+	list-style-type: none;
+	cursor: pointer;
+}
+.search-field {
+	box-sizing: border-box;
+  	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-color: white;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    border-radius: 50px;
+    border: 1px solid #777;
+    color: #575756;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 16px;
+    padding: 12px 24px;
+    transform-style: preserve-3d;
+    transition: all 250ms ease-in-out;
+	width: 100%;
+}
+.aside {
+	background-color: #555;
+	box-sizing: border-box;
+	display: none;
+	float: left;
+	height: 100%;
+	padding: 16px;
+	width: 250px;
+}
+.trigger {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-color: #FFF;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 0 solid;
+    box-shadow: 2px 2px 4px RGBA(0, 0, 0, .3);
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    left: -183px;
+    position: absolute;
+    top: 70px;
+    width: 50px;
+}
+@media (max-width: 449px) {
+	.trigger {
+		left: -210px;
+	}
 }
 
-.App-link {
-  color: #61dafb;
+.open .map {
+	margin-left: 250px;
+	width: calc(100% - 250px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 449px) {
+	.open .trigger {
+		left: 50px;
+	}
+}
+.open .aside {
+	display: block;
 }
